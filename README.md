@@ -24,6 +24,8 @@ I wrote exactly this snippet first. It is the core idea, the spark for the whole
 })();
 ```
 
+> BTW, you can also run this snippet in the console of the viewer page. The url should be replaced with the actual URL which you can get from the network tab.
+
 ## What the Extension Does
 - Detects the `BrowserFile` XHR/fetch request used by the viewer.
 - Shows a clean download button in the top-right toolbar area.
