@@ -9,7 +9,7 @@ I wrote exactly this snippet first. It is the core idea, the spark for the whole
 
 ```js
 (async () => {
-  const url = "https://etd.xjtlu.edu.cn/api/v1/File/BrowserFile?xxxxxxxxxxxx";
+  const url = "https://etd.xjtlu.edu.cn/api/v1/File/BrowserFile?dbCode=EXAMXJTLU&recordId=13698&dbId=3&flag=0";
   const resp = await fetch(url, {
     headers: {
       "Referer": location.href,
@@ -30,6 +30,9 @@ I wrote exactly this snippet first. It is the core idea, the spark for the whole
 - Downloads the PDF with a dynamic filename based on the request params.
 - Surfaces download errors with a minimal toast under the button.
 
+## Download (CRX)
+I already packed the extension. Grab the latest `.crx` from the Releases page and use it directly. If Chrome blocks installation, fall back to Developer Mode below.
+
 ## Install (Developer Mode)
 1. Open `chrome://extensions`
 2. Enable Developer mode
@@ -41,5 +44,10 @@ I wrote exactly this snippet first. It is the core idea, the spark for the whole
 - `page/` Page-level hook to capture network requests
 - `manifest.json` MV3 entry
 
+## Release Log
+See `RELEASE_LOG.md`.
+
+## License
+This project is released under the MIT License. The goal is simple and direct: Real Free.
 ## Notes
 If the viewer is loaded in another domain or the API changes, you may need to update the host permissions and path matcher.
