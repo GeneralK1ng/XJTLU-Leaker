@@ -1,0 +1,36 @@
+{
+  "manifest_version": 3,
+  "name": "XJTLU-Leaker",
+  "version": "1.0.0",
+  "description": "Detects XJTLU viewer PDF requests and adds a quick download button.",
+  "host_permissions": [
+    "https://etd.xjtlu.edu.cn/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://etd.xjtlu.edu.cn/static/readonline/web/viewer.html*"
+      ],
+      "js": [
+        "content/namespace.js",
+        "content/constants.js",
+        "content/url.js",
+        "content/download.js",
+        "content/ui.js",
+        "content/inject.js",
+        "content/index.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "page/hook.js"
+      ],
+      "matches": [
+        "https://etd.xjtlu.edu.cn/*"
+      ]
+    }
+  ]
+}
