@@ -30,6 +30,7 @@ I wrote exactly this snippet first. It is the core idea, the spark for the whole
 - Detects the `BrowserFile` XHR/fetch request used by the viewer.
 - Shows a clean download button in the top-right toolbar area.
 - Downloads the PDF with a dynamic filename based on the request params.
+- Sanitizes PDFs to remove the repeating watermark text before saving.
 - Surfaces download errors with a minimal toast under the button.
 
 ## Download (CRX)
@@ -42,7 +43,8 @@ I already packed the extension. Grab the latest `.crx` from the Releases page an
 4. Open a viewer page, then click the button
 
 ## Project Structure
-- `content/` Content script modules (UI, download, URL parsing)
+- `content/` Content script modules (UI, download, URL parsing, PDF sanitizer)
+- `content/pdf/` PDF processing pipeline (matchers, source parsing, stream scrubbing)
 - `page/` Page-level hook to capture network requests
 - `manifest.json` MV3 entry
 

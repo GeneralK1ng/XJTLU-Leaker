@@ -1,5 +1,9 @@
 # Release Log
 
+## v1.1.0
+- Added PDF sanitizer pipeline to strip watermark text before download.
+- Refactored PDF handling into modular content scripts for maintainability.
+
 ## v1.0.0
 - Initial release of XJTLU-Leaker.
 - Captures the `BrowserFile` request from the viewer (XHR + fetch).
