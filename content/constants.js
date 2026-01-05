@@ -10,6 +10,7 @@
       loading: "Downloading...",
       success: "Downloaded",
       error: "Download failed"
-    }
+    },
+    redactText: "XJTLU Academic Use Only by 114514\nUse Responsibly & Respect Copyright"
   };
 })();

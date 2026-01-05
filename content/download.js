@@ -1,6 +1,8 @@
 (() => {
   const XJTLU = globalThis.__XJTLU_PDF__ || (globalThis.__XJTLU_PDF__ = {});
   const urlUtils = XJTLU.url;
+  const constants = XJTLU.constants || {};
+  const sanitizer = XJTLU.pdf?.sanitizer;
 
   XJTLU.download = {
     fetchPdf,
@@ -15,8 +17,9 @@
     }
 
     const blob = await resp.blob();
+    const sanitizedBlob = await sanitizeBlob(blob);
     const filename = urlUtils.buildFilenameFromUrl(pdfUrl);
-    return { blob, filename };
+    return { blob: sanitizedBlob, filename };
   }
 
   function saveBlob(blob, filename) {
@@ -31,5 +34,14 @@
     link.remove();
 
     setTimeout(() => URL.revokeObjectURL(objectUrl), 5000);
+  }
+
+  async function sanitizeBlob(blob) {
+    if (!sanitizer || typeof sanitizer.sanitizePdfBlob !== "function") {
+      throw new Error("PDF sanitizer is not available.");
+    }
+
+    const targetText = constants.redactText;
+    return await sanitizer.sanitizePdfBlob(blob, { targetText });
   }
 })();

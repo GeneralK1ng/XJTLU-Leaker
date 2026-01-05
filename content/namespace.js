@@ -11,4 +11,5 @@
     toast: null,
     toastTimer: null
   };
+  root.pdf = root.pdf || {};
 })();

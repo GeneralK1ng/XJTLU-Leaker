@@ -12,9 +12,15 @@
         "https://etd.xjtlu.edu.cn/static/readonline/web/viewer.html*"
       ],
       "js": [
+        "vendor/pdf-lib/pdf-lib.min.js",
+        "vendor/pdfjs/pdf.min.js",
         "content/namespace.js",
         "content/constants.js",
         "content/url.js",
+        "content/pdf/matchers.js",
+        "content/pdf/source.js",
+        "content/pdf/streams.js",
+        "content/pdf/sanitizer.js",
         "content/download.js",
         "content/ui.js",
         "content/inject.js",
@@ -26,7 +32,8 @@
   "web_accessible_resources": [
     {
       "resources": [
-        "page/hook.js"
+        "page/hook.js",
+        "vendor/pdfjs/pdf.worker.min.js"
       ],
       "matches": [
         "https://etd.xjtlu.edu.cn/*"
