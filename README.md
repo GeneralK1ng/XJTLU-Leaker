@@ -2,10 +2,12 @@
 
 The school only lets us view past exam papers online. This extension grabs the PDF anyway. Online-only access is a policy, not a law of nature. The name says it all.
 
-**AI notice:** This README (and the extension code) was written by AI. The only line I personally wrote is the script below.
+**AI notice:** Most of this README and the extension code were written by AI.
+
+**Disclaimer:** This tool is for reference and learning purposes only.
 
 ## The One-Liner I Wrote (and why this exists)
-I wrote exactly this snippet first. It is the core idea, the spark for the whole project, and the only human-written code in this repo:
+I wrote exactly this snippet first. It is the core idea, the spark for the whole project, and the original human-written code in this repo:
 
 ```js
 (async () => {
